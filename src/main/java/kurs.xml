@@ -16,5 +16,9 @@
         <constructor-arg index="1" value="0.05"/>
         <constructor-arg index="2" value="2"/>
     </bean>
+    <bean id="klient" class="pl.kurs.Klient">
+        <property name="name" value="Marek"/>
+        <property name="kredyt" ref="kredyt"/>
+    </bean>
 
 </beans>
