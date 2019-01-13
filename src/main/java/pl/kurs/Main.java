@@ -13,14 +13,13 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("kurs.xml");
 
         //Wydobycie beana:
-        Klient klient = context.getBean("klient", Klient.class);
-        Kredyt kredyt = klient.getKredyt();
-
-        //Wykorzystanie beana:
-        System.out.println(kredyt);
-
-        NumberFormat formatter = new DecimalFormat("#.##");
-        System.out.println(formatter.format(kredyt.getRata()));
+        Klient klient = context.getBean("klient1", Klient.class);
+        Rachunek rachunek = klient.getRachunek();
+        rachunek.zasil(100);
+        int i=0;
+        while(rachunek.pobierz(10) && i++<100) {
+            System.out.println(i+" Pobieram 10 zł");
+        }
 
     }
 

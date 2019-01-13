@@ -16,9 +16,24 @@
         <constructor-arg index="1" value="0.05"/>
         <constructor-arg index="2" value="2"/>
     </bean>
+
+    <bean id="rachunek1" class="pl.kurs.Rachunki.ZwyklyRachunek"/>
+    <bean id="rachunek2" class="pl.kurs.Rachunki.RachunekMock"/>
+
     <bean id="klient" class="pl.kurs.Klient">
         <property name="name" value="Marek"/>
         <property name="kredyt" ref="kredyt"/>
     </bean>
+    <bean id="klient1" class="pl.kurs.Klient">
+        <property name="name" value="Anna"/>
+        <property name="kredyt" ref="kredyt"/>
+        <property name="rachunek" ref="rachunek1"/>
+    </bean>
+    <bean id="klient2" class="pl.kurs.Klient">
+        <property name="name" value="Marek MOCK"/>
+        <property name="kredyt" ref="kredyt"/>
+        <property name="rachunek" ref="rachunek2"/>
+    </bean>
+
 
 </beans>

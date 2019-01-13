@@ -9,5 +9,6 @@ public class Klient {
     private int id;
     private String name;
     private Kredyt kredyt;
+    private Rachunek rachunek;
 
 }
