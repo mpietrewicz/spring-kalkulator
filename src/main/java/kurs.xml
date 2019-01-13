@@ -17,7 +17,9 @@
         <constructor-arg index="2" value="2"/>
     </bean>
 
-    <bean id="rachunek1" class="pl.kurs.Rachunki.ZwyklyRachunek"/>
+    <bean id="rachunek1" class="pl.kurs.Rachunki.ZwyklyRachunek">
+        <property name="numer" value="1234"/>
+    </bean>
     <bean id="rachunek2" class="pl.kurs.Rachunki.RachunekMock"/>
 
     <bean id="klient" class="pl.kurs.Klient">
@@ -35,5 +37,16 @@
         <property name="rachunek" ref="rachunek2"/>
     </bean>
 
+    <bean id="bank" class="pl.kurs.Bank">
+        <property name="rachunki">
+            <list>
+                <ref bean="rachunek1"/>
+                <ref bean="rachunek2"/>
+                <bean class="pl.kurs.Rachunki.ZwyklyRachunek">
+                    <property name="numer" value="xyz"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
 
 </beans>

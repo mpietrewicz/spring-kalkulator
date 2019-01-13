@@ -21,6 +21,9 @@ public class Main {
             System.out.println(i+" Pobieram 10 zł");
         }
 
+        Bank bank = context.getBean("bank", Bank.class);
+        System.out.println(bank);
+
     }
 
 }
