@@ -49,4 +49,6 @@
         </property>
     </bean>
 
+    <!--<bean class="pl.kurs.MyAspect"/>-->
+
 </beans>
